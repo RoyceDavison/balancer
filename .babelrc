@@ -1,0 +1,5 @@
+{
+    //presets is just bunch of plugins
+    "presets":["@babel/env", "@babel/react"],
+    "plugins": ["babel-plugin-transform-object-rest-spread"]
+} 
