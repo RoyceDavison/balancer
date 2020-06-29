@@ -12,8 +12,8 @@ import getVisibleExpenses from "./redux/selectors/expenses";
 
 import "react-dates/lib/css/_datepicker.css";
 
-// //for testing: npm test -- --watch
-// const store = configureStore();
+//for testing: npm test -- --watch
+const store = configureStore();
 // store.dispatch(
 //   addExpense({
 //     des: "water bill",
