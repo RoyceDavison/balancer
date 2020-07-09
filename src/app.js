@@ -6,7 +6,7 @@ import "normalize.css/normalize.css"; //Normalize.css makes browsers render all 
 import "./styles/styles.scss";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./redux/store/configStore";
-import { addExpense } from "./redux/actions/expenses";
+import { startSetExpenses } from "./redux/actions/expenses";
 import { setTextFilter } from "./redux/actions/filters";
 import getVisibleExpenses from "./redux/selectors/expenses";
 
@@ -51,4 +51,9 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
-ReactDOM.render(jsx, document.getElementById("app"));
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById("app"));
+});

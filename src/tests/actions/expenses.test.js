@@ -3,6 +3,8 @@ import {
   removeExpense,
   editExpense,
   startAddExpense,
+  setExpenses,
+  startSetExpenses,
 } from "../../redux/actions/expenses";
 import configureStore from "redux-mock-store"; //ES6 modules
 import thunk from "redux-thunk";
@@ -10,6 +12,17 @@ import expenses from "../fixtures/expenses";
 import database from "../../firebase/firebase";
 
 const createMockStore = configureStore([thunk]);
+
+beforeEach((done) => {
+  const expensesData = {};
+  expenses.forEach(({ id, des, amount, note, createdAt }) => {
+    expensesData[id] = { des, amount, note, createdAt };
+  });
+  database
+    .ref("expenses")
+    .set(expensesData)
+    .then(() => done());
+});
 
 test("should setup addExpense object with provided values", () => {
   const action = addExpense(expenses[2]);
@@ -107,5 +120,25 @@ test("should setup editExpense object", () => {
     updates: {
       note: "new note value",
     },
+  });
+});
+
+test("should setup expense action object with data", () => {
+  const action = setExpenses(expenses);
+  expect(action).toEqual({
+    type: "SET_EXPENSES",
+    expenses,
+  });
+});
+
+test("should fetch the expenses from firebase", (done) => {
+  const store = createMockStore({});
+  store.dispatch(startSetExpenses()).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: "SET_EXPENSES",
+      expenses,
+    });
+    done();
   });
 });

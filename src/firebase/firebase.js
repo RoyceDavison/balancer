@@ -10,8 +10,6 @@ var firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID,
 };
 
-console.log(process.env.NODE_ENV);
-console.log(firebaseConfig);
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
