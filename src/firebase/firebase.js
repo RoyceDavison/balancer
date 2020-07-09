@@ -1,5 +1,4 @@
 import * as firebase from "firebase";
-console.log("Hello! my world!");
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -10,6 +9,9 @@ var firebaseConfig = {
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
 };
+
+console.log(process.env.NODE_ENV);
+console.log(firebaseConfig);
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
