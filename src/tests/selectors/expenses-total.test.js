@@ -8,7 +8,6 @@ test("should return 0 if no expense", () => {
 
 test("should correctly add up a single expense", () => {
   const e = [expenses[0]];
-  console.log(`Hello my world ${e}`);
   const res = selectExpensesTotal([expenses[0]]);
   expect(res).toBe(1000);
 });
