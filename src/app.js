@@ -11,8 +11,9 @@ import { setTextFilter } from "./redux/actions/filters";
 import getVisibleExpenses from "./redux/selectors/expenses";
 
 import "react-dates/lib/css/_datepicker.css";
-
+import "./firebase/firebase";
 //for testing: npm test -- --watch
+
 const store = configureStore();
 // store.dispatch(
 //   addExpense({

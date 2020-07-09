@@ -2,6 +2,7 @@
 
 exports[`Airbnb_enzyme: should render ExpenseDashboardPage properly 1`] = `
 <div>
+  <Connect(ExpenseSummary) />
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
 </div>
