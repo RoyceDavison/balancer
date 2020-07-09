@@ -9,7 +9,7 @@ import {
   setEndDate,
 } from "../redux/actions/filters";
 
-class ExpenseListFilters extends React.Component {
+export class ExpenseListFilters extends React.Component {
   constructor(props) {
     super(props);
     this.onDatesChange = this.onDatesChange.bind(this);
@@ -24,8 +24,8 @@ class ExpenseListFilters extends React.Component {
 
   //look at github react-dates then we could find the returned parameters
   onDatesChange({ startDate, endDate }) {
-    this.props.dispatch(setStartDate(startDate));
-    this.props.dispatch(setEndDate(endDate));
+    this.props.setStartDate(startDate);
+    this.props.setEndDate(endDate);
   }
 
   onFocusChange(calendarFocused) {
@@ -35,14 +35,14 @@ class ExpenseListFilters extends React.Component {
   }
 
   onTextChange(e) {
-    this.props.dispatch(setTextFilter(e.target.value));
+    this.props.setTextFilter(e.target.value);
   }
 
   onSortChange(e) {
     if (e.target.value === "date") {
-      this.props.dispatch(sortByDate());
+      this.props.sortByDate();
     } else if (e.target.value === "amount") {
-      this.props.dispatch(sortByAmount());
+      this.props.sortByAmount();
     }
     // console.log(e.target.value);
   }
@@ -86,7 +86,16 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(ExpenseListFilters);
+//for testing purpose
+const mapDispatchToProps = (dispatch) => ({
+  setTextFilter: (text) => dispatch(setTextFilter(text)),
+  sortByDate: () => dispatch(sortByDate()),
+  sortByAmount: () => dispatch(sortByAmount()),
+  setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+  setEndDate: (endDate) => dispatch(setEndDate(endDate)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);
 
 // const ExpenseListFilters = (props) => (
 //   //controled input

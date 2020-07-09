@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../components/Header";
 // import ShallowRenderer from "react-test-renderer/shallow"; // ES6
 import { shallow } from "enzyme"; //这个是需要config setUp的
+import { Header } from "../../components/Header";
 //import toJSON from "enzyme-to-json"; //jest.config.json 加了snapshotSerializers之后可以不用toJSON
 
 //shallow render --> only render given React component
@@ -14,10 +14,22 @@ import { shallow } from "enzyme"; //这个是需要config setUp的
 //   expect(renderer.getRenderOutput()).toMatchSnapshot();
 // });
 
-test("Airbnb_enzyme: should render Header properly", () => {
-  const wrapper = shallow(<Header />);
-  expect(wrapper.find("h1").length).toBe(1);
-  expect(wrapper.find("h1").text()).toBe("Expensify");
-  //expect(toJSON(wrapper)).toMatchSnapshot();
+// test("Airbnb_enzyme: should render Header properly", () => {
+//   const wrapper = shallow(<Header />);
+//   expect(wrapper.find("h1").length).toBe(1);
+//   expect(wrapper.find("h1").text()).toBe("Expensify");
+//   //expect(toJSON(wrapper)).toMatchSnapshot();
+//   expect(wrapper).toMatchSnapshot();
+// });
+
+test("should render header correctly", () => {
+  const wrapper = shallow(<Header startLogout={() => {}} />);
   expect(wrapper).toMatchSnapshot();
+});
+
+test("should call startLogout on button click", () => {
+  const startLogout = jest.fn();
+  const wrapper = shallow(<Header startLogout={startLogout} />);
+  wrapper.find("button").simulate("click");
+  expect(startLogout).toHaveBeenCalled();
 });

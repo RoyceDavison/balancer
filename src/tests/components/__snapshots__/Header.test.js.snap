@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Airbnb_enzyme: should render Header properly 1`] = `
+exports[`should render header correctly 1`] = `
 <header>
   <h1>
     Expensify
@@ -21,14 +21,11 @@ exports[`Airbnb_enzyme: should render Header properly 1`] = `
   <NavLink
     activeClassName="is-active"
     to="/edit"
+  />
+  <button
+    onClick={[Function]}
   >
-    Edit Page
-  </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    to="/help"
-  >
-    Help Page
-  </NavLink>
+    Logout
+  </button>
 </header>
 `;
