@@ -1,5 +1,7 @@
 # balancer
-This is a simple budget tracking app. The app includes the following features:
+This is a simple budget tracking app. To access [**it**](https://balancer-roycez.herokuapp.com/).
+
+The app includes the following features:
 1. Authentification: login with google email & logout
 2. Add & remove & edit an expense(all expenses are stored in firebase)
 3. Search for an expense
