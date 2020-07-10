@@ -20,3 +20,8 @@ npm install
 npm run build:dev
 npm run dev-server
 ```
+<img src="https://github.com/RoyceDavison/balancer/blob/master/imgs/loginPage.png" width="1000" height="500">
+<img src="https://github.com/RoyceDavison/balancer/blob/master/imgs/dashboard.png" width="1000" height="500">
+<img src="https://github.com/RoyceDavison/balancer/blob/master/imgs/search.png" width="1000" height="500">
+<img src="https://github.com/RoyceDavison/balancer/blob/master/imgs/addExpense.png" width="1000" height="500">
+<img src="https://github.com/RoyceDavison/balancer/blob/master/imgs/editExpense.png" width="1000" height="500">
