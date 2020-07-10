@@ -17,10 +17,11 @@ if (process.env.NODE_ENV === "test") {
 
 //loader: customize the behaviors of webpack
 //babel-core allows you run babel_tool from webpack,  babel-loader is a webpack plugin is to teach webpack how to run babel
+//babel-polyfill: allow your code to run on different versions of brower (older brower)
 module.exports = (env) => {
   const isProduction = env === "production";
   return {
-    entry: "./src/app.js",
+    entry: ["babel-polyfill", "./src/app.js"],
     output: {
       path: path.resolve(__dirname, "public/"),
       filename: "bundle.js",
@@ -87,6 +88,7 @@ module.exports = (env) => {
       //When using the HTML5 History API,
       //the index.html page will likely have to be served in place of any 404 responses.
       historyApiFallback: true,
+      //publicPath: "/dist/",
     },
   };
 };

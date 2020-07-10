@@ -5,11 +5,25 @@ import selectExpenses from "../redux/selectors/expenses";
 
 //connect a component to the redux store, it is reactive: when the store change, the component get re-render
 export const ExpenseList = (props) => (
-  <div>
-    <h1>ExpenseList</h1>
-    {props.expenses.map((expense) => {
-      return <ExpenseListItem key={expense.id} {...expense} />;
-    })}
+  <div className="content-container">
+    <div className="list-header">
+      <div className="show-for-mobile">Expenses</div>
+      <div className="show-for-desktop">Expense</div>
+      <div className="show-for-desktop">Amount</div>
+    </div>
+    <div className="list-body">
+      {props.expenses.length === 0 ? (
+        <div className="list-item list-item--message">
+          <span>
+            <h3>No Expense</h3>
+          </span>
+        </div>
+      ) : (
+        props.expenses.map((expense) => {
+          return <ExpenseListItem key={expense.id} {...expense} />;
+        })
+      )}
+    </div>
   </div>
 );
 
