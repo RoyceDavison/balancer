@@ -1,5 +1,6 @@
 # balancer
-This is a simple budget tracking app. To access [**it**](https://balancer-roycez.herokuapp.com/). (The app still in development process to integrate more features, some previous features may be turn off for testing purpose.)
+This is a simple budget tracking app. To access [**it**](https://balancer-roycez.herokuapp.com/). 
+(The app still in development process to integrate more features, some previous features may be turn off for testing purpose.)
 
 The app includes the following features:
 1. Authentification: login with google email & logout
