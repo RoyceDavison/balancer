@@ -1,5 +1,5 @@
 # balancer
-This is a simple budget tracking app. To access [**it**](https://balancer-roycez.herokuapp.com/).
+This is a simple budget tracking app. To access [**it**](https://balancer-roycez.herokuapp.com/). (The app still in development process to integrate more features, some previous features may be turn off for testing purpose.)
 
 The app includes the following features:
 1. Authentification: login with google email & logout
@@ -8,7 +8,7 @@ The app includes the following features:
 4. Reorder the expenses by amount or date
 
 New features that will be integrated into the app:
-1. Add signup page and allow more login social media
+1. Add signup page and allow more option to login using different social media
 2. "Forget Password"
 3. Classify the expenses, so users are easy to know their monthly spending
 4. Add Fun APIs: food api that will be used to automatically calculate price for a meal and make meal recommendation to the users
